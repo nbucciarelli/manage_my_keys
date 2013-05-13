@@ -1,0 +1,29 @@
+= form_for @key do |f|
+  = f.label :device_name
+  = f.text_field :device_name
+
+  = f.label :internal_address
+  = f.text_area :assets
+
+  = f.label :internal_address
+  = f.text_field :internal_address
+
+  = f.label :primary_internal_protocol
+  = f.text_field :primary_internal_protocol
+
+  = f.label :port
+  = f.text_field :port
+
+  = f.label :external_address
+  = f.text_field :external_address
+
+  = f.label :necessary_external_protocol_port
+  = f.text_field :necessary_external_protocol_port
+
+  = f.label :external_credentials
+  = f.text_field :external_credentials
+
+  = f.label :internal_credentials
+  = f.text_field :internal_credentials
+  %br
+  = f.submit

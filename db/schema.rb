@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513194335) do
+ActiveRecord::Schema.define(:version => 20130513201512) do
+
+  create_table "keys", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "device_name"
+    t.text     "assets"
+    t.string   "internal_address"
+    t.string   "primary_internal_protocol"
+    t.string   "port"
+    t.string   "external_address"
+    t.string   "necessary_external_protocol_port"
+    t.string   "external_credentials"
+    t.string   "internal_credentials"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
