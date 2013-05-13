@@ -5,3 +5,5 @@
 $(document).ready ->
   $('.sign_out').click ->
     console.log "sup"
+
+  setTimeout("$('#flash_messages').fadeIn('slow').delay(1500).fadeOut('slow')", 1000) if $('.notifications')

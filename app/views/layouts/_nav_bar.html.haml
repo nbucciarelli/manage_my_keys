@@ -1,0 +1,34 @@
+%ul.nav
+  %li.active= link_to 'Home', root_path
+  -# %li
+  -#   %a{:href => "#about"} About
+  -# %li
+  -#   %a{:href => "#contact"} Contact
+  -# %li.dropdown
+  -#   %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+  -#     Dropdown
+  -#     %b.caret
+  -#   %ul.dropdown-menu
+  -#     %li
+  -#       %a{:href => "#"} Action
+  -#     %li
+  -#       %a{:href => "#"} Another action
+  -#     %li
+  -#       %a{:href => "#"} Something else here
+  -#     %li.divider
+  -#     %li.nav-header Nav header
+  -#     %li
+  -#       %a{:href => "#"} Separated link
+  -#     %li
+  -#       %a{:href => "#"} One more separated link
+- p params
+- if current_user
+  = link_to "Sign Out", destroy_user_session_path, class: 'btn pull-right sign_out_button', method: :delete
+- elsif params[:controller] != 'devise/sessions' && params[:action] != 'create'
+  = link_to 'Register', new_user_registration_path, class: 'btn pull-right'
+  = form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'navbar-form pull-right' } do |f|
+    = f.email_field :email, :autofocus => true, placeholder: 'Email', class: 'span2'
+
+    = f.password_field :password, placeholder: 'Password', class: 'span2'
+    = f.submit "Sign in", class: 'btn'
+
