@@ -5,9 +5,6 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -23,7 +20,7 @@ end
 gem 'jquery-rails'
 gem 'haml'
 gem 'devise'
-
+gem 'heroku'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -38,3 +35,11 @@ gem 'devise'
 
 # To use debugger
 # gem 'debugger'
+group :development do
+  gem 'mysql2'
+end
+
+group :production do
+  gem "pg"
+end
+
